@@ -1,6 +1,6 @@
 "use client";
 
-import { ExtensionProps, ExtensionCompProps } from "../utils/useTypes";
+import { ExtensionProps } from "../utils/useTypes";
 import data from "../data.json";
 import Heading from "./components/Heading";
 import Actions from "./components/Actions";
