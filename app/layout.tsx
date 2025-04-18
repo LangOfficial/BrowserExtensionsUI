@@ -12,9 +12,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`font-primary antialiased`}
+        className={`font-primary antialiased p-6 background-gradient dark:text-neutral-C-0 text-neutral-C-900`}
       >
         {children}
       </body>

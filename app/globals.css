@@ -1,28 +1,52 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 @plugin "daisyui" {
-  themes:
-    light --default,
-    dark --prefersdark;
+  themes: light --default;
 }
 
 @theme {
-  --font-primary: "Noto Sans", "sans-serif";
-  --color-neutral-C-0: "hsl(200, 60%, 99%)",
-  --color-neutral-C-100: "hsl(0, 0%, 93%)"
-  --color-neutral-C-200: "hsl(217, 61%, 90%)"
-  --color-neutral-C-300: "hsl(0, 0%, 78%)"
-  --color-neutral-C-600: "hsl(226, 11%, 37%)"
-  --color-neutral-C-700: "hsl(225, 23%, 24%)"
-  --color-neutral-C-800: "hsl(226, 25%, 17%)"
-  --color-neutral-C-900: "hsl(227, 75%, 14%)"
-  --color-red-C-400: "hsl(3, 86%, 64%)"
-  --color-red-C-500: "hsl(3, 71%, 56%)"
-  --color-red-C-700: "hsl(3, 77%, 44%)"
-  --color-light-gradient: "linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%)";
-  --color-dark-gradient: "linear-gradient(180deg, #040918 0%, #091540 100%)";
+  --font-primary: "Noto Sans", sans-serif;
+  --color-neutral-C-0: hsl(200, 60%, 99%);
+  --color-neutral-C-100: hsl(0, 0%, 93%);
+  --color-neutral-C-200: hsl(217, 61%, 90%);
+  --color-neutral-C-300: hsl(0, 0%, 78%);
+  --color-neutral-C-600: hsl(226, 11%, 37%);
+  --color-neutral-C-700: hsl(225, 23%, 24%);
+  --color-neutral-C-800: hsl(226, 25%, 17%);
+  --color-neutral-C-900: hsl(227, 75%, 14%);
+  --color-red-C-400: hsl(3, 86%, 64%);
+  --color-red-C-500: hsl(3, 71%, 56%);
+  --color-red-C-700: hsl(3, 77%, 44%);
+  --breakpoint-fm: 1440px;
+}
 
-  --breakpoint-fm: "1440px"
+:root {
+  --color-background-gradient: linear-gradient(
+    180deg,
+    #ebf2fc 0%,
+    #eef8f9 100%
+  );
+}
+
+.dark {
+  --color-background-gradient: linear-gradient(
+    180deg,
+    #040918 0%,
+    #091540 100%
+  );
+}
+
+.background-gradient {
+  background-image: var(--color-background-gradient);
+}
+
+.extension-status-btn {
+  @apply cursor-pointer rounded-full px-4 py-2 dark:bg-neutral-C-700 border border-neutral-C-200 dark:border-neutral-C-600 bg-neutral-C-0 text-neutral-C-900 dark:text-neutral-C-0;
+}
+
+.extension-status-btn-active {
+  @apply !border-none dark:!text-neutral-C-900 !bg-red-C-400 !text-neutral-C-0;
 }
